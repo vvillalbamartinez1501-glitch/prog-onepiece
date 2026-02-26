@@ -7,12 +7,23 @@ public class Tripulacion {
     private int MAX_TRIPULACION = 10;
     private int numeroPiratas = 0;
 
+    /**
+     * constructor para la clase Tripulacion
+     * @param nombre nombre de la tripulacion
+     * @param barco barco al que corresponde esta tripulacion
+     */
     public Tripulacion (String nombre, Barco barco/*, int capitanId*/) {
         this.nombre = nombre;
         this.barco = barco;
         //this.capitanId = capitanId;
         this.tripulacion = new Pirata[MAX_TRIPULACION];
     }
+
+    /**
+     * recorre el array de tripulacion hasta que encuentra un pirata con el mismo id que el introducido como parámetro
+     * @param idPirataBuscado el id del pirata cuya existencia quieres comprobar
+     * @return true si el pirata fue encontrado en la tripulacion, false si no
+     */
 
     public boolean existePirata(int idPirataBuscado){
         boolean estaEnTripulacion = false;
@@ -25,6 +36,12 @@ public class Tripulacion {
         return estaEnTripulacion;
     }
 
+    /**
+     * recorre el array de tripulacion hasta que encuentra un pirata con el mismo id que el introducido como parámetro
+     * @param idPirataBuscado el id del pirata cuya existencia quieres comprobar
+     * @return el indice en el array de piratas del pirata buscado, -1 si no fue encontrado
+     */
+
     private int buscarIndicePirata(int idPirataBuscado){
         int posicionPirataEnTripulacion = -1;
 
@@ -35,6 +52,13 @@ public class Tripulacion {
         }
         return posicionPirataEnTripulacion;
     }
+
+    /**
+     * busca la existencia del pirata en el array de tripulacion,si lo encuentra, no lo mete a la tripulacion, si no lo encuentra, busca un hueco libre en el array de tripulacion, si lo encuentra, lo guarda en ese hueco, si no, no por que no tiene sitio.
+     * Si logra añadir al pirata, suma 1 al numero de piratas en la tripulacion
+     * @param pirataAReclutar pirata que quieres anexionar en el array de tripuacion
+     * @return true si se pudo false si no
+     */
 
     public boolean reclutarPirata(Pirata pirataAReclutar){
         boolean pirataReclutado= true;
@@ -52,6 +76,11 @@ public class Tripulacion {
         return pirataReclutado;
     }
 
+    /**
+     * recorre el array de tripulacion hasta que encuentre un valor nulo, si no lo hay devuelve -1
+     * @return el indice del valor nulo en el array tripulacion
+     */
+
     private int buscarHuecoLibreTripulacion(){
         int posicionLibre = -1;
         for (int i = 0 ;posicionLibre == -1 &&  i < MAX_TRIPULACION ; i++){
@@ -61,6 +90,12 @@ public class Tripulacion {
         }
         return posicionLibre;
     }
+
+    /**
+     * busca al pirata en el array tripulacion, si lo encuentra, en su indice da valor nulo y resta la cantidad de piratas actual en la tripulacion, si no, no hace nada
+     * @param idPirataAExpulsar
+     * @return
+     */
 
     public Pirata expulsarPirata(int idPirataAExpulsar){
         Pirata pirataExpulsado = null;
@@ -77,6 +112,12 @@ public class Tripulacion {
         return pirataExpulsado;
     }
 
+    /**
+     * busca le indice del pirata cuyo id es dado como parametro, si está en la tripulacion, da su posicion como valor del indice del capitanm sino, no hace nada
+     * @param idPirataAAscender el id del pìrata al que quieres nombrar capitán
+     * @return true si se pudo asignar eel capitan, false si no
+     */
+
     public boolean nombrarCapitan(int idPirataAAscender){
         int posicionPirataEnTripulacion;
         boolean capitanActualizado = true;
@@ -91,6 +132,11 @@ public class Tripulacion {
 
         return capitanActualizado;
     }
+
+    /**
+     * informe completo con la información de la tripulacion y del nombre barco
+     * @return el informe en format string
+     */
 
     public String generarInforme(){
         StringBuilder informe = new StringBuilder("Informe completo de la tripulacion:");
