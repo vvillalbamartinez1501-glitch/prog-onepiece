@@ -65,11 +65,12 @@ public class Tripulacion {
         Pirata pirataExpulsado = null;
         int posicionPirataEnTripulacion;
 
-        if(pirataEstaEnTripulacion(idPirataAExpulsar)){
-            posicionPirataEnTripulacion = buscarIndicePirata(idPirataAExpulsar);
+        posicionPirataEnTripulacion =  buscarIndicePirata(idPirataAExpulsar);
 
+        if(posicionPirataEnTripulacion != -1){
+            pirataExpulsado = tripulacion[posicionPirataEnTripulacion];
+            tripulacion[posicionPirataEnTripulacion] = null;
         }
-
 
         return pirataExpulsado;
     }
