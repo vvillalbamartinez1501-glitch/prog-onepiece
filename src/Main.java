@@ -6,6 +6,7 @@ public class Main {
         Pirata zoro;
         Pirata pingu;
         Pirata venus;
+        Pirata esther;
         Barco thousandSunny;
         Tripulacion tripulacionTS;
 
@@ -21,10 +22,6 @@ public class Main {
         zoro.toString();
         thousandSunny.toString();
 
-
-
-
-
         tripulacionTS = new Tripulacion ("Tripulación del Thousand Sunny",thousandSunny);
 
 
@@ -37,6 +34,16 @@ public class Main {
 
         System.out.println(tripulacionTS.generarInforme());
 
+
+        try{
+            esther = new Pirata(-3,"Esther García Fernandez",0);
+        } catch (Exception e) {
+            System.err.println("Gimnasio creado por defecto");
+        } finally{
+            esther = new Pirata ();
+        }
+
+        System.out.println(esther.toString());
 
     }
 }

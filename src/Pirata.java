@@ -10,10 +10,30 @@ public class Pirata {
      * @param recompensa recompensa en formato double por captura del pirata
      */
     public Pirata (int id, String nombre, double recompensa) {
-        this.id = id;
+        this.id = validarId(id);
         this.nombre = nombre;
         this.recompensa = recompensa;
     }
+
+    public Pirata() {
+
+    }
+
+    public int validarId(int id){
+
+        try{
+            if (id < 0 ) {
+                throw new Exception("Código inválido");
+            }
+        } catch (NumberFormatException e){
+                System.err.println("El id ha de ser un número");
+        } finally{
+            return id;
+        }
+    }
+
+
+
 
     public int getId(){
         return id;
