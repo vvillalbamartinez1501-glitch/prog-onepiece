@@ -25,7 +25,7 @@ public class Main {
 
 
 
-        tripulacionTS = new Tripulacion ("Tripulación del Thousand Sunny",thousandSunny,1);
+        tripulacionTS = new Tripulacion ("Tripulación del Thousand Sunny",thousandSunny);
 
 
         tripulacionTS.reclutarPirata(luffy);
@@ -33,7 +33,7 @@ public class Main {
         tripulacionTS.reclutarPirata(pingu);
         tripulacionTS.reclutarPirata(venus);
 
-        tripulacionTS.reclutarPirata(pingu);
+        tripulacionTS.nombrarCapitan(pingu.getId());
 
         System.out.println(tripulacionTS.generarInforme());
 

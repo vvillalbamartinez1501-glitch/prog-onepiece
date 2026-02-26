@@ -7,10 +7,10 @@ public class Tripulacion {
     private int MAX_TRIPULACION = 10;
     private int numeroPiratas = 0;
 
-    public Tripulacion (String nombre, Barco barco, int capitanId) {
+    public Tripulacion (String nombre, Barco barco/*, int capitanId*/) {
         this.nombre = nombre;
         this.barco = barco;
-        this.capitanId = capitanId;
+        //this.capitanId = capitanId;
         this.tripulacion = new Pirata[MAX_TRIPULACION];
     }
 
@@ -25,7 +25,7 @@ public class Tripulacion {
         return estaEnTripulacion;
     }
 
-    public int buscarIndicePirata(int idPirataBuscado){
+    private int buscarIndicePirata(int idPirataBuscado){
         int posicionPirataEnTripulacion = -1;
 
         for (int i = 0 ; posicionPirataEnTripulacion == -1 && i < MAX_TRIPULACION ; i++){
@@ -86,7 +86,7 @@ public class Tripulacion {
         if (posicionPirataEnTripulacion == -1){
             capitanActualizado = false;
         } else {
-            this.capitanId = idPirataAAscender;
+            this.capitanId = posicionPirataEnTripulacion;
         }
 
         return capitanActualizado;
