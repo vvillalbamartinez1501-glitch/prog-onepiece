@@ -75,4 +75,19 @@ public class Tripulacion {
         return pirataExpulsado;
     }
 
+    public boolean nombrarCapitan(int idPirataAAscender){
+        int posicionPirataEnTripulacion;
+        boolean capitanActualizado = true;
+
+        posicionPirataEnTripulacion = buscarIndicePirata(idPirataAAscender);
+
+        if (posicionPirataEnTripulacion == -1){
+            capitanActualizado = false;
+        } else {
+            this.capitanId = idPirataAAscender;
+        }
+
+        return capitanActualizado;
+    }
+
 }
