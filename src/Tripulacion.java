@@ -29,7 +29,7 @@ public class Tripulacion {
         int posicionPirataEnTripulacion = -1;
 
         for (int i = 0 ; posicionPirataEnTripulacion == -1 && i < MAX_TRIPULACION ; i++){
-            if (tripulacion[i].getId() == idPirataBuscado){
+            if (tripulacion[i] != null && tripulacion[i].getId() == idPirataBuscado){
                 posicionPirataEnTripulacion = i;
             }
         }
@@ -104,6 +104,8 @@ public class Tripulacion {
         informe.append("\n");
 
         informe.append("Número de miembros / Capacidad del barco: ");
+        informe.append("\n");
+
         informe.append(numeroPiratas);
         informe.append("/");
         informe.append(MAX_TRIPULACION);
@@ -120,10 +122,8 @@ public class Tripulacion {
             informe.append("No hay tripulación abordo de este barco");
         } else {
             for (int i = 0 ; i < MAX_TRIPULACION ; i++){
-                if (tripulacion[i] == null){
+                if (tripulacion[i] != null){
                     informe.append(tripulacion[i].toString());
-                    informe.append("\n");
-
                 }
             }
         }
