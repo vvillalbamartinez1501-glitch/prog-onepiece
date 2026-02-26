@@ -14,6 +14,10 @@ public class Barco {
         return resistencia;
     }
 
+    /**
+     * toString de la información basica de barco
+     * @return ombre del barco y su resistencia en formato string
+     */
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
