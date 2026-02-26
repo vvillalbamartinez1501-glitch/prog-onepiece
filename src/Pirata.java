@@ -3,6 +3,12 @@ public class Pirata {
     private String nombre;
     private double recompensa;
 
+    /**
+     * Constructor de la clase Pirata
+     * @param id identificado único por Pirata
+     * @param nombre Ombre oficial del pirata
+     * @param recompensa recompensa en formato double por captura del pirata
+     */
     public Pirata (int id, String nombre, double recompensa) {
         this.id = id;
         this.nombre = nombre;
@@ -19,7 +25,10 @@ public class Pirata {
         return recompensa;
     }
 
-
+    /**
+     * toString en formato de una sola linea
+     * @return [id] - nombreDelPirata Recompensa: recompensaSobreSuCaptura
+     */
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
