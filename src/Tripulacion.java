@@ -14,7 +14,7 @@ public class Tripulacion {
         this.tripulacion = new Pirata[MAX_TRIPULACION];
     }
 
-    public boolean pirataEstaEnTripulacion(int idPirataBuscado){
+    public boolean existePirata(int idPirataBuscado){
         boolean estaEnTripulacion = false;
 
         for (int i = 0 ; !estaEnTripulacion && i < MAX_TRIPULACION ; i++){
